@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Starfall | BCZ lib docs</title>
+		<title>sprites lib | Starfall BCZ</title>
 		<style>
 		#bg{
 			position:fixed;
@@ -20,6 +20,7 @@
 			color:#FFFFFF;
 			font-family:Bahnschrift Light;
 			font-size:20px;
+			text-decoration: none;
 		}
 		div{
 			color:#FFFFFF;
@@ -31,7 +32,7 @@
 			font-family:Bahnschrift Light;
 			font-size:30px;
 			text-align: center;
-			position:absolute;
+			position:fixed;
 			left:0;
 			top:0;
 			width:256;
@@ -39,11 +40,24 @@
 			display:block;
 			text-decoration: none;
 		}
-		#slot{
+		#bigimg{
 			position:relative;
+			width:90%;
+			top:20;
+		}
+		#firstslot{
+			position:fixed;
 			top:90px;
 			left:0px;
 			display:inline;
+			list-style:none;
+		}
+		#secslot{
+			position:fixed;
+			top:120px;
+			left:0px;
+			display:inline;
+			list-style:none;
 		}
 		#subslot{
 			position:relative;
@@ -68,44 +82,228 @@
 			color:#FFFFFF;
 			height:25px;
 		}
+		#page{
+			position:absolute;
+			left:261;
+			right:5;
+			top:5;
+			bottom:5;
+			margin:5;
+		}
+		#selected{
+			text-decoration: underline;
+		}
 		</style>
 	</head>
 	<body>
 		<canvas id="bg" width='100px' height='100px'></canvas>
 		<canvas id="maincanvas" width='256px' height='25'></canvas>
-		<a id="big" href="index.html"><font size=50>BCZ</font><br>Documentation</a>
-		<div id="slot" width='100px' height='50px'>
+		<a id="big" href="index.html"><img src="logo2.png" id="bigimg"></img></a>
+		<div id="firstslot" width='100px' height='50px'>
 			<image id="icon" src="icon.png" width='16px' height='16px'></image>
-			<a id="text" width = '248px' height='50px' href="e2.html">Expression 2</a>
+			<a id="text" width = '248px' height='50px' href="#">Expression 2</a>
 		</div>
-		<div id="slot" width='100px' height='50px'>
+		<div id="secslot" width='100px' height='50px'>
 			<image id="icon" src="icon2.png" width='16px' height='16px'></image>
-			<a id="text" width = '10px' height='50px' href="sf.html">Starfall</a>
+			<li><a id="text" width = '10px' height='50px' href="#" >Starfall</a>
+				<ul>
+					<li><a href="sfsprites.html">sprite</li>
+					<li><a href="#" id="selected">particles</li>
+					<li><a href="sftextures.html">textures</li>
+				</ul>
+			</li>
 		</div>
-		<div id="subslot" width='100px' height='50px'>
-			<a id="text" width = '10px' height='50px' href="sfsprites.html">sprites</a>
-		</div>
-		<div id="subslot" width='100px' height='50px'>
-			<a id="text" width = '10px' height='50px' href="sfparticles.html"><font color='#0099FF'>particles</font></a>
-		</div>
-		<div id="subslot" width='100px' height='50px'>
-			<a id="text" width = '10px' height='50px' href="sftextures.html">textures</a>
-		</div>
+		<figure id="page">
+			<a><font size='40px'>particles lib</font></a>
+			<a><br>Particles lib allows you to easily create and manipulate particles for render. But don't overdo it, Particles are very expensive.</a>
+			<a><br><br><font size='5' color='#999999'>Functions:</font><br></a>
+			<a href="#mtpos"><br><font color='#999999'>mt:<font color='#FFFFFF'>setPos</font>( x , y )</font></a>
+			<a href="#mtpos"><br><font color='#999999'>mt:<font color='#FFFFFF'>getPos</font>()</font></a>
+			<a href="#mttexture"><br><font color='#999999'>mt:<font color='#FFFFFF'>setTexture</font>( texture )</font></a>
+			<a href="#mttexture"><br><font color='#999999'>mt:<font color='#FFFFFF'>getTexture</font>()</font></a>
+			<a href="#mtvel"><br><font color='#999999'>mt:<font color='#FFFFFF'>setVel</font>( x , y )</font></a>
+			<a href="#mtvel"><br><font color='#999999'>mt:<font color='#FFFFFF'>getVel</font>()</font></a>
+			<a href="#mtroll"><br><font color='#999999'>mt:<font color='#FFFFFF'>setRoll</font>( radians )</font></a>
+			<a href="#mtroll"><br><font color='#999999'>mt:<font color='#FFFFFF'>getRoll</font>()</font></a>
+			<a href="#mtdroll"><br><font color='#999999'>mt:<font color='#FFFFFF'>setDeltaRoll</font>( radians )</font></a>
+			<a href="#mtdroll"><br><font color='#999999'>mt:<font color='#FFFFFF'>getDeltaRoll</font>()</font></a>
+			<a href="#mtsdroll"><br><font color='#999999'>mt:<font color='#FFFFFF'>setStartDeltaRoll</font>( radians )</font></a>
+			<a href="#mtsdroll"><br><font color='#999999'>mt:<font color='#FFFFFF'>getStartDeltaRoll</font>()</font></a>
+			<a href="#mtedroll"><br><font color='#999999'>mt:<font color='#FFFFFF'>setEndDeltaRoll</font>( radians )</font></a>
+			<a href="#mtedroll"><br><font color='#999999'>mt:<font color='#FFFFFF'>getEndDeltaRoll</font>()</font></a>
+			<a href="#mtalpha"><br><font color='#999999'>mt:<font color='#FFFFFF'>setAlpha</font>( alpha )</font></a>
+			<a href="#mtalpha"><br><font color='#999999'>mt:<font color='#FFFFFF'>getAlpha</font>()</font></a>
+			<a href="#mtlt"><br><font color='#999999'>mt:<font color='#FFFFFF'>setLifetime</font>( seconds )</font></a>
+			<a href="#mtlt"><br><font color='#999999'>mt:<font color='#FFFFFF'>getLifetime</font>()</font></a>
+			<a href="#mtt"><br><font color='#999999'>mt:<font color='#FFFFFF'>setTime</font>( seconds )</font></a>
+			<a href="#mtt"><br><font color='#999999'>mt:<font color='#FFFFFF'>getTime</font>()</font></a>
+			<a href="#mtgrav"><br><font color='#999999'>mt:<font color='#FFFFFF'>setGravity</font>( x , y )</font></a>
+			<a href="#mtgrav"><br><font color='#999999'>mt:<font color='#FFFFFF'>getGravity</font>()</font></a>
+			<a href="#mtairrest"><br><font color='#999999'>mt:<font color='#FFFFFF'>setAirResistance</font>( resist )</font></a>
+			<a href="#mtairrest"><br><font color='#999999'>mt:<font color='#FFFFFF'>getAirResistance</font>()</font></a>
+			<a href="#mtsalpha"><br><font color='#999999'>mt:<font color='#FFFFFF'>setStartAlpha</font>( alpha )</font></a>
+			<a href="#mtsalpha"><br><font color='#999999'>mt:<font color='#FFFFFF'>getStartAlpha</font>()</font></a>
+			<a href="#mtealpha"><br><font color='#999999'>mt:<font color='#FFFFFF'>setEndAlpha</font>( alpha )</font></a>
+			<a href="#mtealpha"><br><font color='#999999'>mt:<font color='#FFFFFF'>getEndAlpha</font>()</font></a>
+			<a href="#mtssize"><br><font color='#999999'>mt:<font color='#FFFFFF'>setStartSize</font>( scale )</font></a>
+			<a href="#mtssize"><br><font color='#999999'>mt:<font color='#FFFFFF'>getStartSize</font>()</font></a>
+			<a href="#mtesize"><br><font color='#999999'>mt:<font color='#FFFFFF'>setEndSize</font>( scale )</font></a>
+			<a href="#mtesize"><br><font color='#999999'>mt:<font color='#FFFFFF'>getEndSize</font>()</font></a>
+			<a href="#mtscolor"><br><font color='#999999'>mt:<font color='#FFFFFF'>setStartColor</font>( color )</font></a>
+			<a href="#mtscolor"><br><font color='#999999'>mt:<font color='#FFFFFF'>getStartColor</font>()</font></a>
+			<a href="#mtecolor"><br><font color='#999999'>mt:<font color='#FFFFFF'>setEndColor</font>( color )</font></a>
+			<a href="#mtecolor"><br><font color='#999999'>mt:<font color='#FFFFFF'>getEndColor</font>()</font></a>
+			<a href="#mtcenter"><br><font color='#999999'>mt:<font color='#FFFFFF'>setCenter</font>( x , y )</font></a>
+			<a href="#mtcenter"><br><font color='#999999'>mt:<font color='#FFFFFF'>getCenter</font>()</font></a>
+			<a href="#mtdepth"><br><font color='#999999'>mt:<font color='#FFFFFF'>setDepth</font>( depth )</font></a>
+			<a href="#mtdepth"><br><font color='#999999'>mt:<font color='#FFFFFF'>getDepth</font>()</font></a>
+			<a href="#mtremove"><br><font color='#999999'>mt:<font color='#FFFFFF'>remove</font>()</font></a>
+			<a href="#particledraw"><br>Particle.draw<font color='#999999'>()</font></a>
+			<br>
+			<a name="mtpos"><br><font size='6px'>mt:setPos( <font color='#999999'>float</font> x , <font color='#999999'>float</font> y)</font><br>
+			Sets position for a next spawned particle.
+			</a>
+			<a name="mtpos"><br><br><font size='6px'>mt:getPos()</font><br>
+			Returns position.
+			</a>
+			<a name="mttexture"><br><br><font size='6px'>mt:setTexture( <font color='#999999'>material</font> texture)</font><br>
+			Sets a texture for a next spawned particle. Be sure your material is correct otherwise error will appear or texture will be blank.
+			</a>
+			<a name="mttexture"><br><br><font size='6px'>mt:getTexture()</font><br>
+			Returns last applied texture.
+			</a>
+			<a name="mtvel"><br><br><font size='6px'>mt:setVel( <font color='#999999'>float</font> x , <font color='#999999'>float</font> y )</font><br>
+			Rewrites velocity for all active particles. Not changes velocity for next spawned particles if only this function will not be called again.
+			Every tick all active particles will move by velocity value.
+			</a>
+			<a name="mtvel"><br><br><font size='6px'>mt:getVel()</font><br>
+			Returns last applied velocity.<br>
+			</a>
+			<a name="mtroll"><br><br><font size='6px'>mt:setRoll( <font color='#999999'>bool</font> state)</font><br>
+			Rewrites roll for all active particles. Not changes roll for next spawned particles if only this function will not be called again.<br>
+			Every tick all active particles will rotate by roll value.
+			</a>
+			<a name="mtroll"><br><br><font size='6px'>mt:getRoll()</font><br>
+			Returns last applied roll.
+			</a>
+			<a name="mtdroll"><br><br><font size='6px'>mt:setDeltaRoll( <font color='#999999'>float</font> amount)</font><br>
+			Rewrites DeltaRoll for all active particles. Not changes DeltaRoll for next spawned particles if only this function will not be called again.
+			</a>
+			<a name="mtdroll"><br><br><font size='6px'>mt:getDeltaRoll()</font><br>
+			Returns last applied DeltaRoll.
+			</a>
+			<a name="mtsdroll"><br><br><font size='6px'>mt:setStartDeltaRoll( <font color='#999999'>float</font> seconds )</font><br>
+			Sets roll that particle will start with.
+			</a>
+			<a name="mtsdroll"><br><br><font size='6px'>mt:getStartDeltaRoll()</font><br>
+			Returns End time for DeltaRoll.
+			</a>
+			<a name="mtedroll"><br><br><font size='6px'>mt:setEndDeltaRoll( <font color='#999999'>float</font> seconds )</font><br>
+			Sets DeltaRoll that particle will reach to.
+			</a>
+			<a name="mtedroll"><br><br><font size='6px'>mt:getEndDeltaRoll()</font><br>
+			Returns End time for DeltaRoll.
+			</a>
+			<a name="mtalpha"><br><br><font size='6px'>mt:setAlpha( <font color='#999999'>float</font> alpha )</font><br>
+			Sets opacity for all active particles. Not changes opacity for next spawned particles if only this function will not be called again.
+			</a>
+			<a name="mtalpha"><br><br><font size='6px'>mt:getAlpha()</font><br>
+			Returns last applied alpha.
+			</a>
+			<a name="mtlt"><br><br><font size='6px'>mt:setLifetime( <font color='#999999'>float</font> seconds )</font><br>
+			Sets life time for next spawning particles.
+			</a>
+			<a name="mtlt"><br><br><font size='6px'>mt:getLifetime()</font><br>
+			Returns life time.
+			</a>
+			<a name="mtt"><br><br><font size='6px'>mt:setTime( <font color='#999999'>float</font> seconds )</font><br>
+			Rewrites lifetime for all active particles. Not changes lifetime for next spawned particles if only this function will not be called again.
+			</a>
+			<a name="mtt"><br><br><font size='6px'>mt:getTime()</font><br>
+			Returns last applied time.
+			</a>
+			<a name="mtgrav"><br><br><font size='6px'>mt:setGravity( <font color='#999999'>float</font> x , <font color='#999999'>float</font> y )</font><br>
+			Sets the way and power particles will pulled to.
+			</a>
+			<a name="mtgrav"><br><br><font size='6px'>mt:getGravity()</font><br>
+			Returns gravity.
+			</a>
+			<a name="mtairrest"><br><br><font size='6px'>mt:setAirResistance( <font color='#999999'>float</font> value )</font><br>
+			Sets air resistance for all particles.
+			</a>
+			<a name="mtairrest"><br><br><font size='6px'>mt:getAirResistance()</font><br>
+			Returns air resistance.
+			</a>
+			<a name="mtsalpha"><br><br><font size='6px'>mt:setStartAlpha( <font color='#999999'>float</font> alpha )</font><br>
+			Sets opacity that particle will start with.
+			</a>
+			<a name="mtsalpha"><br><br><font size='6px'>mt:getStartAlpha()</font><br>
+			Returns start alpha.
+			</a>
+			<a name="mtealpha"><br><br><font size='6px'>mt:setEndAlpha( <font color='#999999'>float</font> alpha )</font><br>
+			Sets opacity that particle will reach to.
+			</a>
+			<a name="mtealpha"><br><br><font size='6px'>mt:getEndAlpha()</font><br>
+			Returns DeltaRoll that particle will reach to.
+			</a>
+			<a name="mtssize"><br><br><font size='6px'>mt:setStartSize( <font color='#999999'>float</font> x , <font color='#999999'>float</font> y )</font><br>
+			Sets size that particle will start with.
+			</a>
+			<a name="mtssize"><br><br><font size='6px'>mt:getStartSize()</font><br>
+			Returns start size.
+			</a>
+			<a name="mtesize"><br><br><font size='6px'>mt:setEndSize( <font color='#999999'>float</font> x , <font color='#999999'>float</font> y  )</font><br>
+			Sets size that particle will reach to.
+			</a>
+			<a name="mtesize"><br><br><font size='6px'>mt:getEndSize()</font><br>
+			Returns size that particle will reach to.
+			</a>
+			<a name="mtscolor"><br><br><font size='6px'>mt:setStartColor( <font color='#999999'>color</font> color )</font><br>
+			Sets size that particle will start with.
+			</a>
+			<a name="mtscolor"><br><br><font size='6px'>mt:getStartColor()</font><br>
+			Returns color start size.
+			</a>
+			<a name="mtecolor"><br><br><font size='6px'>mt:setEndColor( <font color='#999999'>color</font> color )</font><br>
+			Sets color that particle will reach to.
+			</a>
+			<a name="mtecolor"><br><br><font size='6px'>mt:getEndColor()</font><br>
+			Returns color that particle will reach to.
+			</a>
+			<a name="mtcenter"><br><br><font size='6px'>mt:setCenter( <font color='#999999'></font> color )</font><br>
+			Sets center of particle texture.
+			</a>
+			<a name="mtcenter"><br><br><font size='6px'>mt:getCenter()</font><br>
+			Returns center of particle texture.
+			</a>
+			<a name="mtdepth"><br><br><font size='6px'>mt:setDepth( <font color='#999999'></font> color )</font><br>
+			Sets Z-Index for particle emitter.
+			</a>
+			<a name="mtdepth"><br><br><font size='6px'>mt:getDepth()</font><br>
+			Returns Z-Index.
+			</a>
+			<a name="mtremove"><br><br><font size='6px'>mt:remove()</font><br>
+			Removes all particles
+			</a>
+			<a name="particledraw"><br><br><font size='6px'>Particle.draw()</font><br>
+			The main function that lets particles draw on render.
+			</a>
+		</figure>
 		
 		<script>
 		var c = document.getElementById("bg")
 		var ctx = c.getContext('2d')
 		ctx.fillStyle = '#333333'
 		ctx.fillRect(0,0,100,100)
-		
-		var c2 = document.getElementById("maincanvas")
-		var ctx2 = c2.getContext('2d')
+		var c2 = document.getElementById("maincanvas");
+		var ctx2 = c2.getContext('2d');
 		var bodySize = document.body.getBoundingClientRect();
 		c2.setAttribute('height',bodySize.height+9000);
 		ctx2.fillStyle = '#666666'
-		ctx2.fillRect(0,0,256,bodySize.height+9000)
-		ctx2.fillStyle = '#6600FF'
-		ctx2.fillRect(0,0,256,100)
+		ctx2.fillRect(0,0,256,bodySize.height+9000);
+		ctx2.fillStyle = '#6600FF';
+		ctx2.fillRect(0,0,256,100);
+		setInterval(10,"tick");
 		</script>
 	</body>
 </html>

@@ -39,42 +39,84 @@
 			display:block;
 			text-decoration: none;
 		}
-		#slot{
+		#bigimg{
 			position:relative;
+			width:90%;
+			top:20;
+		}
+		#firstslot{
+			position:fixed;
 			top:90px;
 			left:0px;
 			display:inline;
+			list-style:none;
+		}
+		#secslot{
+			position:fixed;
+			top:120px;
+			left:0px;
+			display:inline;
+			list-style:none;
+		}
+		#secslot ul{
+			display:none;
 		}
 		#icon{
 			position:relative;
 			left:8px;
 			top:25px;
+			content: url('icon.png');
 		}
 		#text{
 			display:block;
 			position:relative;
 			left:28px;
 			top:6px;
-			width:248px;
+			width:200px;
 			text-decoration: none;
 			color:#FFFFFF;
 			height:25px;
+		}
+		#secslot li:hover > ul,
+		#category figure:hover > ul{
+			display:block;
+		}
+		#subslot{
+			position:relative;
+			top:5px;
+			left:10px;
+			height:20px;
+			width:300px;
+			margin:0;
+		}
+		#page{
+			position:absolute;
+			left:261;
+			right:5;
+			top:5;
+			bottom:5;
+			margin:5;
 		}
 		</style>
 	</head>
 	<body>
 		<canvas id="bg" width='100px' height='100px'></canvas>
 		<canvas id="maincanvas" width='256px' height='25'></canvas>
-		<a id="big" href="index.html"><font size=50>BCZ</font><br>Documentation</a>
-		<div id="slot" width='100px' height='50px'>
+		<a id="big" href="index.html"><img src="logo2.png" id="bigimg"></img></a>
+		<div id="firstslot" width='100px' height='50px'>
 			<image id="icon" src="icon.png" width='16px' height='16px'></image>
-			<a id="text" width = '248px' height='50px' href="e2.html">Expression 2</a>
+			<a id="text" width = '248px' height='50px' href="#">Expression 2</a>
 		</div>
-		<div id="slot" width='100px' height='50px'>
+		<div id="secslot" width='100px' height='50px'>
 			<image id="icon" src="icon.png" width='16px' height='16px'></image>
-			<a id="text" width = '10px' height='50px' href="sf.html">Starfall</a>
+			<li><a id="text" width = '10px' height='50px' href="#" >Starfall</a>
+				<ul>
+					<li><a href="sfsprites.html">sprite</li>
+					<li><a href="sfparticles.html">particles</li>
+					<li><a href="sftextures.html">textures</li>
+				</ul>
+			</li>
 		</div>
-		
 		<script>
 		var c = document.getElementById("bg")
 		var ctx = c.getContext('2d')

@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Starfall | BCZ lib docs</title>
+		<title>sprites lib | Starfall BCZ</title>
 		<style>
 		#bg{
 			position:fixed;
@@ -20,6 +20,7 @@
 			color:#FFFFFF;
 			font-family:Bahnschrift Light;
 			font-size:20px;
+			text-decoration: none;
 		}
 		div{
 			color:#FFFFFF;
@@ -31,7 +32,7 @@
 			font-family:Bahnschrift Light;
 			font-size:30px;
 			text-align: center;
-			position:absolute;
+			position:fixed;
 			left:0;
 			top:0;
 			width:256;
@@ -39,11 +40,24 @@
 			display:block;
 			text-decoration: none;
 		}
-		#slot{
+		#bigimg{
 			position:relative;
+			width:90%;
+			top:20;
+		}
+		#firstslot{
+			position:fixed;
 			top:90px;
 			left:0px;
 			display:inline;
+			list-style:none;
+		}
+		#secslot{
+			position:fixed;
+			top:120px;
+			left:0px;
+			display:inline;
+			list-style:none;
 		}
 		#subslot{
 			position:relative;
@@ -76,51 +90,60 @@
 			bottom:5;
 			margin:5;
 		}
+		#selected{
+			text-decoration: underline;
+		}
 		</style>
 	</head>
 	<body>
 		<canvas id="bg" width='100px' height='100px'></canvas>
 		<canvas id="maincanvas" width='256px' height='25'></canvas>
-		<a id="big" href="index.html"><font size=50>BCZ</font><br>Documentation</a>
-		<div id="slot" width='100px' height='50px'>
+		<a id="big" href="index.html"><img src="logo2.png" id="bigimg"></img></a>
+		<div id="firstslot" width='100px' height='50px'>
 			<image id="icon" src="icon.png" width='16px' height='16px'></image>
-			<a id="text" width = '248px' height='50px' href="e2.html">Expression 2</a>
+			<a id="text" width = '248px' height='50px' href="#">Expression 2</a>
 		</div>
-		<div id="slot" width='100px' height='50px'>
+		<div id="secslot" width='100px' height='50px'>
 			<image id="icon" src="icon2.png" width='16px' height='16px'></image>
-			<a id="text" width = '10px' height='50px' href="sf.html">Starfall</a>
-		</div>
-		<div id="subslot" width='100px' height='50px'>
-			<a id="text" width = '10px' height='50px' href="sfsprites.html"><font color='#0099FF'>sprites</font></a>
-		</div>
-		<div id="subslot" width='100px' height='50px'>
-			<a id="text" width = '10px' height='50px' href="sfparticles.html">particles</a>
-		</div>
-		<div id="subslot" width='100px' height='50px'>
-			<a id="text" width = '10px' height='50px' href="sftextures.html">textures</a>
+			<li><a id="text" width = '10px' height='50px' href="#" >Starfall</a>
+				<ul>
+					<li><a href="#" id="selected">sprite</li>
+					<li><a href="sfparticles.html">particles</li>
+					<li><a href="sftextures.html">textures</li>
+				</ul>
+			</li>
 		</div>
 		<figure id="page">
 			<a><font size='40px'>sprites lib</font></a>
-			<a><br><br>Functions:<br></a>
-			<a><br><font size='6px'>mt:pos( <font color='#999999'>float</font> x , <font color='#999999'>float</font> y)</font><br>
+			<a><br>Sprites lib allows you to easily make rotated and textured rects.</a>
+			<a><br><br><font size='5' color='#999999'>Functions:</font><br></a>
+			<a href="#mtpos"><br><font color='#999999'>mt:<font color='#FFFFFF'>pos</font>( x , y )</font></a>
+			<a href="#mtrotate"><br><font color='#999999'>mt:<font color='#FFFFFF'>rotate</font>( degrees )</font></a>
+			<a href="#mtdepth"><br><font color='#999999'>mt:<font color='#FFFFFF'>depth</font>( Z-Index )</font></a>
+			<a href="#mttexture"><br><font color='#999999'>mt:<font color='#FFFFFF'>texture</font>( texture )</font></a>
+			<a href="#mtvisible"><br><font color='#999999'>mt:<font color='#FFFFFF'>visible</font>( state )</font></a>
+			<a href="#mtcolor"><br><font color='#999999'>mt:<font color='#FFFFFF'>color</font>( color )</font></a>
+			<a href="#mtuv"><br><font color='#999999'>mt:<font color='#FFFFFF'>uv</font>( StartUV X , StartUV Y , EndUV X , EndUV Y )</font></a>
+			<br>
+			<a name="mtpos"><br><font size='6px'>mt:pos( <font color='#999999'>float</font> x , <font color='#999999'>float</font> y)</font><br>
 			Sets position for a sprite. Returns input.
 			</a>
-			<a><br><br><font size='6px'>mt:rotate( <font color='#999999'>float</font> degrees)</font><br>
+			<a name="mtrotate"><br><br><font size='6px'>mt:rotate( <font color='#999999'>float</font> degrees)</font><br>
 			Sets rotation degrees for a sprite. (NOT rotates!) Returns input.
 			</a>
-			<a><br><br><font size='6px'>mt:depth( <font color='#999999'>float</font> Z-Index)</font><br>
+			<a name="mtdepth"><br><br><font size='6px'>mt:depth( <font color='#999999'>float</font> Z-Index)</font><br>
 			Sets Z-Index for a sprite. Sprites with higher Z-Index value will be in front of sprites with lower Z-Index value. Returns input.
 			</a>
-			<a><br><br><font size='6px'>mt:texture( <font color='#999999'>material</font> texture)</font><br>
+			<a name="mttexture"><br><br><font size='6px'>mt:texture( <font color='#999999'>material</font> texture)</font><br>
 			Sets a texture for a sprite. Be sure your material is correct otherwise error will appear or texture will be blank. Returns input.
 			</a>
-			<a><br><br><font size='6px'>mt:visible( <font color='#999999'>bool</font> state)</font><br>
+			<a name="mtvisible"><br><br><font size='6px'>mt:visible( <font color='#999999'>bool</font> state)</font><br>
 			Makes sprite fully visible or fully invisible. Returns changed value.
 			</a>
-			<a><br><br><font size='6px'>mt:color( <font color='#999999'>color</font> color)</font><br>
+			<a name="mtcolor"><br><br><font size='6px'>mt:color( <font color='#999999'>color</font> color)</font><br>
 			Sets color for a sprite. Returns input.
 			</a>
-			<a><br><br><font size='6px'>mt:uv( <font color='#999999'>float</font> StartUV X , <font color='#999999'>float</font> StartUV Y , <font color='#999999'>float</font> EndUV X , <font color='#999999'>float</font> EndUV Y)</font><br>
+			<a name="mtuv"><br><br><font size='6px'>mt:uv( <font color='#999999'>float</font> StartUV X , <font color='#999999'>float</font> StartUV Y , <font color='#999999'>float</font> EndUV X , <font color='#999999'>float</font> EndUV Y)</font><br>
 			Sets UV for a sprite. Returns input.
 			</a>
 		</figure>
