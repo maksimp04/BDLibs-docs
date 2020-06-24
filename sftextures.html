@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>sprites lib | Starfall BCZ</title>
+		<title>textures lib | Starfall BCZ</title>
 		<style>
 		#bg{
 			position:fixed;
@@ -114,37 +114,21 @@
 			</li>
 		</div>
 		<figure id="page">
-			<a><font size='40px'>sprites lib</font></a>
-			<a><br>Sprites lib allows you to easily make rotated and textured rects.</a>
+			<a><font size='40px'>textures lib</font></a>
+			<a><br>Textures lib easily lets you to create textures for render.setTexture() function.</a>
 			<a><br><br><font size='5' color='#999999'>Functions:</font><br></a>
-			<a href="#mtpos"><br><font color='#999999'>mt:<font color='#FFFFFF'>pos</font>( x , y )</font></a>
-			<a href="#mtrotate"><br><font color='#999999'>mt:<font color='#FFFFFF'>rotate</font>( degrees )</font></a>
-			<a href="#mtdepth"><br><font color='#999999'>mt:<font color='#FFFFFF'>depth</font>( Z-Index )</font></a>
-			<a href="#mttexture"><br><font color='#999999'>mt:<font color='#FFFFFF'>texture</font>( texture )</font></a>
-			<a href="#mtvisible"><br><font color='#999999'>mt:<font color='#FFFFFF'>visible</font>( state )</font></a>
-			<a href="#mtcolor"><br><font color='#999999'>mt:<font color='#FFFFFF'>color</font>( color )</font></a>
-			<a href="#mtuv"><br><font color='#999999'>mt:<font color='#FFFFFF'>uv</font>( StartUV X , StartUV Y , EndUV X , EndUV Y )</font></a>
+			<a href="#mtcall"><br><font color='#999999'>mt:<font color='#FFFFFF'>__call</font>( self , url , scaled , centered )</font></a>
+			<a href="#mtload"><br><font color='#999999'>mt:<font color='#FFFFFF'>loaded</font>()</font></a>
+			<a href="#mtget"><br><font color='#999999'>mt:<font color='#FFFFFF'>get</font>()</font></a>
 			<br>
-			<a name="mtpos"><br><font size='6px'>mt:pos( <font color='#999999'>float</font> x , <font color='#999999'>float</font> y)</font><br>
-			Sets position for a sprite. Returns input.
+			<a name="mtcall"><br><font size='6px'>mt:__call( <font color='#999999'> undefined </font>self , <font color='#999999'>string </font>url , <font color='#999999'>bool </font>scaled , <font color='#999999'>bool </font>centered)</font><br>
+			Creates texture from URL. If URL is broken texture will be fully black or SF throws error. When generating finished, mt:loaded() returns true. If scaled is true, texture will be automatically resized to cover screen space. If centered is true, texture will be centered againsts render screen.
 			</a>
-			<a name="mtrotate"><br><br><font size='6px'>mt:rotate( <font color='#999999'>float</font> degrees)</font><br>
-			Sets rotation degrees for a sprite. (NOT rotates!) Returns input.
+			<a name="mtload"><br><br><font size='6px'>mt:loaded()</font><br>
+			Returns true if texture loaded.
 			</a>
-			<a name="mtdepth"><br><br><font size='6px'>mt:depth( <font color='#999999'>float</font> Z-Index)</font><br>
-			Sets Z-Index for a sprite. Sprites with higher Z-Index value will be in front of sprites with lower Z-Index value. Returns input.
-			</a>
-			<a name="mttexture"><br><br><font size='6px'>mt:texture( <font color='#999999'>material</font> texture)</font><br>
-			Sets a texture for a sprite. Be sure your material is correct otherwise error will appear or texture will be blank. Returns input.
-			</a>
-			<a name="mtvisible"><br><br><font size='6px'>mt:visible( <font color='#999999'>bool</font> state)</font><br>
-			Makes sprite fully visible or fully invisible. Returns changed value.
-			</a>
-			<a name="mtcolor"><br><br><font size='6px'>mt:color( <font color='#999999'>color</font> color)</font><br>
-			Sets color for a sprite. Returns input.
-			</a>
-			<a name="mtuv"><br><br><font size='6px'>mt:uv( <font color='#999999'>float</font> StartUV X , <font color='#999999'>float</font> StartUV Y , <font color='#999999'>float</font> EndUV X , <font color='#999999'>float</font> EndUV Y)</font><br>
-			Sets UV for a sprite. Returns input.
+			<a name="mtget"><br><br><font size='6px'>mt:get()</font><br>
+			Returns result texture.
 			</a>
 		</figure>
 		
